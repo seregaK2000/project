@@ -29,10 +29,10 @@ int main() {
 				close(1);
 				dup(fd[1]);
 				close(fd[1]);
-			
-			char* argv[1000]; 
-			int j = 0;
-			for (s = strtok(strp[0], " "); s != 0; s = strtok(NULL, " ")) {
+
+				char* argv[1000]; 
+				int j = 0;
+				for (s = strtok(strp[0], " "); s != 0; s = strtok(NULL, " ")) {
 					argv[j] = s;
 					j++;
 				}
@@ -51,20 +51,20 @@ int main() {
 					argv1[j1] = s;
 					j1++;
 				}
-				
+
 				argv1[j1] = NULL;
 				char buf;
 				//while (read(fd[0],&buf, 1) > 0) {
 
-					//write(0, &buf, 1);
+				//write(0, &buf, 1);
 				//}
 				close(0);
 				execlp(argv1[0], argv1[0], *stdin, NULL);
 				return 0;
-				
+
 			}
-		return 0;
-}
+			return 0;
+		}
 		wait(NULL);
 
 	}
